@@ -3,5 +3,10 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"files.associations": {
+			"ff.h": "c"
+		}
+	}
 }

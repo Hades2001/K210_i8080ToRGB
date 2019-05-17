@@ -28,17 +28,8 @@
 #include "ff.h"
 #include "diskio.h"
 
-
-int core1_function(void *ctx)
-{
-    uint64_t core = current_coreid();
-    printf("Core %ld Fuck STC\r\n", core);
-    while(1);
-}
-
 void InitLCDGPIO( void )
 {
-    
     fpioa_set_function(37, FUNC_GPIOHS0 + RST_GPIONUM);
     fpioa_set_function(38, FUNC_GPIOHS0 + DCX_GPIONUM);
     fpioa_set_function(36, FUNC_SPI0_SS3);
@@ -62,7 +53,7 @@ void InitLCDHard( void )
 {
     InitLCDGPIO();
     spi_init(SPI_CHANNEL, SPI_WORK_MODE_0, SPI_FF_OCTAL, 32, 0);
-    spi_set_clk_rate(SPI_CHANNEL, 20000000);
+    spi_set_clk_rate(SPI_CHANNEL, 25000000);
 }
 
 #define     LCD_BL_ON       0x61
@@ -80,6 +71,7 @@ void LCDSendCMD( uint8_t CMDData )
 
 void LCDSendByte( uint8_t *DataBuf , uint32_t Length )
 {
+    spi_send_data_multiple_dma( DMAC_CHANNEL0 , SPI_CHANNEL , SPI_SLAVE_SELECT , NULL, 0 , DataBuf, Length );
     spi_send_data_multiple( SPI_CHANNEL, SPI_SLAVE_SELECT, NULL, 0 , DataBuf, Length);    
 }
 
@@ -147,7 +139,6 @@ void LCDPrintChar( uint16_t XPos , uint16_t YPos , char CharData ,uint8_t Mode ,
                 } 
             }
         }
-        printf("\r\n");
     }
 }
 
@@ -165,6 +156,98 @@ FATFS fs;
 FIL file;	  			
 UINT br,bw;			
 FILINFO fileinfo;
+// f_open (FATFS *fs, FIL* fp, const TCHAR* path, BYTE mode);
+#pragma pack(1)
+typedef struct tagBITMAPFILEHEADER { // bmfh 
+    WORD    bfType; 
+    DWORD   bfSize; 
+    DWORD   bfReserved; 
+    DWORD   bfOffBits; 
+} BITMAPFILEHEADER;
+
+typedef struct tagBITMAPINFOHEADER{ // bmih 
+    DWORD  biSize; 
+    LONG   biWidth; 
+    LONG   biHeight; 
+    WORD   biPlanes; 
+    WORD   biBitCount;
+    DWORD  biCompression; 
+    DWORD  biSizeImage; 
+    LONG   biXPelsPerMeter; 
+    LONG   biYPelsPerMeter; 
+    DWORD  biClrUsed; 
+    DWORD  biClrImportant; 
+} BITMAPINFOHEADER; 
+
+#pragma pack()
+bool BMPFile( FATFS *fs , const TCHAR* path )
+{
+    UINT    fbr;
+    BITMAPFILEHEADER    BmpHeadr;
+    BITMAPINFOHEADER    InfHeard;
+
+    if( f_open( fs , &file , path , FA_READ ) != FR_OK )
+    {
+        printf( "Debug:%s:%d \r\n",__FILE__,__LINE__);
+        return false;
+    }
+
+    if( f_read( &file , &BmpHeadr , sizeof( BmpHeadr ), &fbr ) != FR_OK )
+    {
+        printf( "Debug:%s:%d \r\n",__FILE__,__LINE__);
+        return false;
+    }
+
+    LCDPrintStr( 4,104,(char * )path,LCDDisMode_TranBK,0xF800,0x0000);
+    /*
+    printf( "BMP_Type: %04X \r\n",BmpHeadr.bfType );
+    printf( "BMP_Size: %08X \r\n",BmpHeadr.bfSize );
+    printf( "BMP_Res : %02X \r\n" , BmpHeadr.bfReserved);
+    printf( "BMP_Offset: %08X \r\n",BmpHeadr.bfOffBits );
+    */
+    if( f_read( &file , &InfHeard , sizeof( InfHeard ), &fbr ) != FR_OK )
+    {
+        printf( "Debug:%s:%d \r\n",__FILE__,__LINE__);
+        return false;
+    }
+    /*
+    printf( "BMP_Width    : %d \r\n", InfHeard.biWidth );
+    printf( "BMP_Height   : %d \r\n", InfHeard.biHeight );
+    printf( "BMP_BitCount : %d \r\n", InfHeard.biBitCount);
+    printf( "BMP_Com      : %d \r\n", InfHeard.biCompression );
+    */
+
+    uint32_t YPos = 32; 
+    uint32_t XPos = 0; 
+    uint32_t XLine = InfHeard.biWidth * 3;
+    uint16_t Color;
+    for( uint32_t y = InfHeard.biHeight ; y > 0 ; y-- )
+    {
+        f_read( &file , TestBuff , XLine , &fbr );
+        for( uint32_t x = XLine ; x >0 ; x = x-3 )
+        {
+            Color = 0;
+            Color |= (( TestBuff[x] & 0xF8 ) << 8 );
+            Color |= (( TestBuff[x+1] & 0xFC ) << 3 );
+            Color |= ( TestBuff[x+2] >> 3 )& 0x1f;
+
+            LCD_Buff[ ( (YPos+y) * 640 ) + ( (XPos+(x/3)) * 2 ) ]       = Color & 0x00FF;
+            LCD_Buff[ ( (YPos+y) * 640 ) + ( (XPos+(x/3)) * 2 ) + 1 ]   = Color >> 8;
+        }
+    }
+//LCD_Buff
+    f_close( &file );
+
+    return true;
+}
+
+int core1_function(void *ctx)
+{
+    uint64_t core = current_coreid();
+    printf("Core %ld Fuck STC\r\n", core);
+
+    while(1);
+}
 
 int main()
 { 
@@ -176,11 +259,8 @@ int main()
     sysctl_clock_enable(SYSCTL_CLOCK_AI);
 
     uarths_init();
+    InitLCDHard();
     plic_init ();
-
-    printf("Core %ld Fuck STC\r\n", core);
-    register_core1(core1_function, NULL);
-
 
     fpioa_set_function      ( 12 , FUNC_GPIOHS4 );
 	gpiohs_set_drive_mode   ( 4  , GPIO_DM_OUTPUT );
@@ -190,13 +270,19 @@ int main()
 	gpiohs_set_drive_mode   ( 5  , GPIO_DM_OUTPUT );
 	gpiohs_set_pin          ( 5  , GPIO_PV_LOW );
 
-    InitLCDHard();
     uint8_t Res = sd_init();
     printf( "SD Card Init : %d\r\n" , Res);
     
     FRESULT FatfsRes = f_mount( &fs );
     printf( "f_mount : %d\r\n" , FatfsRes);
     
+    char StrBuff[64];
+    uint16_t    PicNum = 1;
+
+    LCDPrintStr( 4,15,"FUCK STC",LCDDisMode_TranBK,0xF800,0x0000);
+
+    printf("Core %ld Fuck STC\r\n", core);
+    register_core1(core1_function, NULL);
 
     timer_init ( TIMER_DEVICE_0 );
     timer_set_interval ( TIMER_DEVICE_0 , TIMER_CHANNEL_0 , 1e3 );
@@ -215,18 +301,13 @@ int main()
     timer_set_enable ( TIMER_CHANNEL_0 , TIMER_CHANNEL_0 , 1);
 
     sysctl_enable_irq ();
-
-    uint32_t SPI0freq = sysctl_clock_get_freq( SYSCTL_CLOCK_SPI0 );
-    printf("SPI0freq = %d \r\n", SPI0freq );
-
-    for( uint32_t y = 0 ; y < 156 ; y++ )
-    for( uint32_t x = 0 ; x < 400 ; x++ )
-    {
-        LCD_Buff[ y * 640 + x ] = ImageData[ y * 400 + x ];
-    }
-    LCDPrintStr( 4,15,"FUCK STC",LCDDisMode_TranBK,0xF800,0x0000);
+    
     while(1)
     {
-
+        if( PicNum > 949 )
+        PicNum = 0;
+        sprintf( StrBuff ,"./%d/BC%04d.bmp",1,PicNum);
+        BMPFile( &fs ,StrBuff);
+        PicNum ++;
     }
 }

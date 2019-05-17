@@ -1,4 +1,4 @@
-# Install script for directory: D:/K210SDK/kendryte-standalone-sdk-0.5.5/lib
+# Install script for directory: D:/K210/K210_i8080ToRGB/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
