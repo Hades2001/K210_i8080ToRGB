@@ -22,11 +22,17 @@
 #include "uarths.h"
 #include "timer.h"
 
+#include "utils.h"
+
 #include "Pic.h"
 #include "Font.h"
 #include "sdcard.h"
 #include "ff.h"
 #include "diskio.h"
+
+#include "dmac.h"
+
+
 
 void InitLCDGPIO( void )
 {
@@ -69,10 +75,73 @@ void LCDSendCMD( uint8_t CMDData )
     spi_send_data_normal_dma(DMAC_CHANNEL0, SPI_CHANNEL, SPI_SLAVE_SELECT, (uint8_t *)(&CMDData), 1, SPI_TRANS_CHAR);
 }
 
+int DmacTransfer_irq( void *ctx )
+{
+    printf("Dmac End\r\n");
+    return 0;
+}
+
+void spi_Mysend_32Bitdata(spi_device_num_t spi_num, spi_chip_select_t chip_select, uint8_t *Data , uint32_t  Length )
+{
+    volatile spi_t *spi_handle = spi[spi_num];
+    uint8_t tmod_offset = 8;
+
+    set_bit(&spi_handle->ctrlr0, 3 << tmod_offset, SPI_TMOD_TRANS << tmod_offset);
+
+    spi_handle->ssienr = 0x01;
+    spi_handle->ser = 1U << chip_select;
+
+    for( uint8_t i = 0 ; i < ( Length / 4 ) ;i++ )
+    spi_handle->dr[0] = ((uint32_t *)Data)[i];
+
+    while ((spi_handle->sr & 0x05) != 0x04);
+
+    spi_handle->ser = 0x00;
+    spi_handle->ssienr = 0x00;
+}
+
+uint32_t *buf;
+
+void spi_Mysend_Dmac( sysctl_dma_channel_t channel , spi_device_num_t spi_num , 
+                      spi_chip_select_t chip_select , uint8_t *Data , uint32_t Length )
+{
+    volatile spi_t *spi_handle = spi[spi_num];
+    uint8_t tmod_offset = 8;
+
+    //dmac_wait_done(channel);
+    /*
+    free( buf );
+
+    buf = malloc( Length );
+    
+    for (uint16_t i = 0; i < ( Length / 4 ); i++)
+    {
+        buf[i] = ((uint32_t *)Data)[i];
+    }
+    */
+    set_bit(&spi_handle->ctrlr0, 3 << tmod_offset, SPI_TMOD_TRANS << tmod_offset);
+
+    spi_handle->dmacr = 0x2;    /*enable dma transmit*/
+    spi_handle->ssienr = 0x01;
+
+    sysctl_dma_select((sysctl_dma_channel_t) channel, SYSCTL_DMA_SELECT_SSI0_TX_REQ + spi_num * 2 );
+
+    dmac_set_channel_param(channel, Data, (void *)(&spi_handle->dr[0]), DMAC_ADDR_INCREMENT, DMAC_ADDR_NOCHANGE,
+                                DMAC_MSIZE_4, DMAC_TRANS_WIDTH_32, Length / 4 );
+                                /*
+    dmac_enable();
+    */
+    dmac_channel_enable(channel);
+
+    spi_handle->ser = 1U << chip_select;
+}
+
 void LCDSendByte( uint8_t *DataBuf , uint32_t Length )
 {
-    spi_send_data_multiple_dma( DMAC_CHANNEL0 , SPI_CHANNEL , SPI_SLAVE_SELECT , NULL, 0 , DataBuf, Length );
-    spi_send_data_multiple( SPI_CHANNEL, SPI_SLAVE_SELECT, NULL, 0 , DataBuf, Length);    
+    spi_Mysend_32Bitdata( SPI_CHANNEL , SPI_SLAVE_SELECT , DataBuf , Length );
+    //spi_Mysend_Dmac( DMAC_CHANNEL1 , SPI_CHANNEL , SPI_SLAVE_SELECT , DataBuf , Length);
+    //spi_send_data_multiple_dma( DMAC_CHANNEL0 , SPI_CHANNEL , SPI_SLAVE_SELECT , NULL, 0 , DataBuf, Length );
+    //spi_send_data_multiple( SPI_CHANNEL, SPI_SLAVE_SELECT, NULL, 0 , DataBuf, Length);    
 }
 
 uint8_t     TestBuff[1600];
@@ -80,17 +149,18 @@ uint8_t     LCD_Buff[320*240*2]__attribute__((aligned(64)));
 uint32_t    FpsTime;
 uint32_t    PageCount;
 uint8_t     *pBuff = &ImageData[0];
-int irq_RS_Sync( void *ctx )
+
+void irq_RS_Sync()
 {
-    if( PageCount < 240 )
-    LCDSendByte( &LCD_Buff[ PageCount * 640 ] , 640 );
-    if( FpsTime > 100 )
+    if( FpsTime > 150 )
         PageCount = 0;
     else 
         PageCount ++;
-    FpsTime = 0;
 
-    return 0;
+    if( PageCount < 240 )
+    LCDSendByte( &LCD_Buff[ PageCount * 640 ] , 640 );
+
+    FpsTime = 0;
 }
 void irq_time( void )
 {
@@ -287,9 +357,19 @@ int main()
     timer_init ( TIMER_DEVICE_0 );
     timer_set_interval ( TIMER_DEVICE_0 , TIMER_CHANNEL_0 , 1e3 );
     timer_set_irq ( TIMER_CHANNEL_0 , TIMER_CHANNEL_0 , irq_time , 1);
-    
+
+    sprintf( StrBuff ,"./%d/BC%04d.bmp",1,369);
+    BMPFile( &fs ,StrBuff);
+
     LCDSendCMD(0x61);
     LCDSendCMD(0x38);
+
+    dmac_cfg_u_t  dmac_cfg;
+
+    dmac_cfg.data = readq(&dmac->cfg);
+    dmac_cfg.cfg.dmac_en = 1;
+    dmac_cfg.cfg.int_en = 1;
+    writeq(dmac_cfg.data, &dmac->cfg);
 
     spi_init(SPI_CHANNEL, SPI_WORK_MODE_0, SPI_FF_OCTAL, 32, 1);
     spi_init_non_standard(SPI_CHANNEL, 0 /*instrction length*/, 32 /*address length*/, 0 /*wait cycles*/,
@@ -297,17 +377,20 @@ int main()
 
     gpiohs_set_drive_mode   (DCX_GPIONUM, GPIO_DM_INPUT);
     gpiohs_set_pin_edge     (DCX_GPIONUM, GPIO_PE_FALLING );
-    gpiohs_irq_register     (DCX_GPIONUM, 1, irq_RS_Sync , NULL );
+    gpiohs_set_irq          (DCX_GPIONUM, 2, irq_RS_Sync );
+
     timer_set_enable ( TIMER_CHANNEL_0 , TIMER_CHANNEL_0 , 1);
 
     sysctl_enable_irq ();
-    
+
     while(1)
     {
+        /*
         if( PicNum > 949 )
         PicNum = 0;
         sprintf( StrBuff ,"./%d/BC%04d.bmp",1,PicNum);
         BMPFile( &fs ,StrBuff);
         PicNum ++;
+        */
     }
 }

@@ -6,7 +6,10 @@
 	],
 	"settings": {
 		"files.associations": {
-			"ff.h": "c"
+			"ff.h": "c",
+			"fpioa.h": "c",
+			"xutility": "c",
+			"dmac.h": "c"
 		}
 	}
 }

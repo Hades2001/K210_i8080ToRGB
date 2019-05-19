@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "D:/K210/K210_i8080ToRGB/src/hello_world/Font.c" "D:/K210/K210_i8080ToRGB/build/CMakeFiles/hello_world.dir/src/hello_world/Font.c.obj"
-  "D:/K210/K210_i8080ToRGB/src/hello_world/Pic.c" "D:/K210/K210_i8080ToRGB/build/CMakeFiles/hello_world.dir/src/hello_world/Pic.c.obj"
-  "D:/K210/K210_i8080ToRGB/src/hello_world/main.c" "D:/K210/K210_i8080ToRGB/build/CMakeFiles/hello_world.dir/src/hello_world/main.c.obj"
-  "D:/K210/K210_i8080ToRGB/src/hello_world/oofatfs/diskio.c" "D:/K210/K210_i8080ToRGB/build/CMakeFiles/hello_world.dir/src/hello_world/oofatfs/diskio.c.obj"
-  "D:/K210/K210_i8080ToRGB/src/hello_world/oofatfs/ff.c" "D:/K210/K210_i8080ToRGB/build/CMakeFiles/hello_world.dir/src/hello_world/oofatfs/ff.c.obj"
-  "D:/K210/K210_i8080ToRGB/src/hello_world/oofatfs/option/ccsbcs.c" "D:/K210/K210_i8080ToRGB/build/CMakeFiles/hello_world.dir/src/hello_world/oofatfs/option/ccsbcs.c.obj"
-  "D:/K210/K210_i8080ToRGB/src/hello_world/sdcard.c" "D:/K210/K210_i8080ToRGB/build/CMakeFiles/hello_world.dir/src/hello_world/sdcard.c.obj"
+  "D:/K210SDK/K210_i8080ToRGB/src/hello_world/Font.c" "D:/K210SDK/K210_i8080ToRGB/build/CMakeFiles/hello_world.dir/src/hello_world/Font.c.obj"
+  "D:/K210SDK/K210_i8080ToRGB/src/hello_world/Pic.c" "D:/K210SDK/K210_i8080ToRGB/build/CMakeFiles/hello_world.dir/src/hello_world/Pic.c.obj"
+  "D:/K210SDK/K210_i8080ToRGB/src/hello_world/main.c" "D:/K210SDK/K210_i8080ToRGB/build/CMakeFiles/hello_world.dir/src/hello_world/main.c.obj"
+  "D:/K210SDK/K210_i8080ToRGB/src/hello_world/oofatfs/diskio.c" "D:/K210SDK/K210_i8080ToRGB/build/CMakeFiles/hello_world.dir/src/hello_world/oofatfs/diskio.c.obj"
+  "D:/K210SDK/K210_i8080ToRGB/src/hello_world/oofatfs/ff.c" "D:/K210SDK/K210_i8080ToRGB/build/CMakeFiles/hello_world.dir/src/hello_world/oofatfs/ff.c.obj"
+  "D:/K210SDK/K210_i8080ToRGB/src/hello_world/oofatfs/option/ccsbcs.c" "D:/K210SDK/K210_i8080ToRGB/build/CMakeFiles/hello_world.dir/src/hello_world/oofatfs/option/ccsbcs.c.obj"
+  "D:/K210SDK/K210_i8080ToRGB/src/hello_world/sdcard.c" "D:/K210SDK/K210_i8080ToRGB/build/CMakeFiles/hello_world.dir/src/hello_world/sdcard.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -39,7 +39,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "D:/K210/K210_i8080ToRGB/build/lib/CMakeFiles/kendryte.dir/DependInfo.cmake"
+  "D:/K210SDK/K210_i8080ToRGB/build/lib/CMakeFiles/kendryte.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

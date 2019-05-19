@@ -46,7 +46,7 @@ typedef struct _spi
     volatile uint32_t txflr;
     /* SPI Receive FIFO Level Register                           (0x24)*/
     volatile uint32_t rxflr;
-    /* SPI Status Register                                       (0x28)*/
+    /*                                        (0x28)*/
     volatile uint32_t sr;
     /* SPI Interrupt Mask Register                               (0x2c)*/
     volatile uint32_t imr;
@@ -476,6 +476,7 @@ void spi_slave_config(uint8_t int_pin, uint8_t ready_pin, dmac_channel_number_t 
  *
  */
 void spi_handle_data_dma(spi_device_num_t spi_num, spi_chip_select_t chip_select, spi_data_t data, plic_interrupt_t *cb);
+
 
 #ifdef __cplusplus
 }

@@ -42,10 +42,10 @@ RM = "C:\Program Files (x86)\CMake\bin\cmake.exe" -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\K210\K210_i8080ToRGB
+CMAKE_SOURCE_DIR = D:\K210SDK\K210_i8080ToRGB
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\K210\K210_i8080ToRGB\build
+CMAKE_BINARY_DIR = D:\K210SDK\K210_i8080ToRGB\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/hello_world.dir/depend.make
@@ -58,94 +58,94 @@ include CMakeFiles/hello_world.dir/flags.make
 
 CMakeFiles/hello_world.dir/src/hello_world/Font.c.obj: CMakeFiles/hello_world.dir/flags.make
 CMakeFiles/hello_world.dir/src/hello_world/Font.c.obj: ../src/hello_world/Font.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\K210\K210_i8080ToRGB\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/hello_world.dir/src/hello_world/Font.c.obj"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\hello_world.dir\src\hello_world\Font.c.obj   -c D:\K210\K210_i8080ToRGB\src\hello_world\Font.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\K210SDK\K210_i8080ToRGB\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/hello_world.dir/src/hello_world/Font.c.obj"
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\hello_world.dir\src\hello_world\Font.c.obj   -c D:\K210SDK\K210_i8080ToRGB\src\hello_world\Font.c
 
 CMakeFiles/hello_world.dir/src/hello_world/Font.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hello_world.dir/src/hello_world/Font.c.i"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\K210\K210_i8080ToRGB\src\hello_world\Font.c > CMakeFiles\hello_world.dir\src\hello_world\Font.c.i
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\K210SDK\K210_i8080ToRGB\src\hello_world\Font.c > CMakeFiles\hello_world.dir\src\hello_world\Font.c.i
 
 CMakeFiles/hello_world.dir/src/hello_world/Font.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hello_world.dir/src/hello_world/Font.c.s"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\K210\K210_i8080ToRGB\src\hello_world\Font.c -o CMakeFiles\hello_world.dir\src\hello_world\Font.c.s
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\K210SDK\K210_i8080ToRGB\src\hello_world\Font.c -o CMakeFiles\hello_world.dir\src\hello_world\Font.c.s
 
 CMakeFiles/hello_world.dir/src/hello_world/Pic.c.obj: CMakeFiles/hello_world.dir/flags.make
 CMakeFiles/hello_world.dir/src/hello_world/Pic.c.obj: ../src/hello_world/Pic.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\K210\K210_i8080ToRGB\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/hello_world.dir/src/hello_world/Pic.c.obj"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\hello_world.dir\src\hello_world\Pic.c.obj   -c D:\K210\K210_i8080ToRGB\src\hello_world\Pic.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\K210SDK\K210_i8080ToRGB\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/hello_world.dir/src/hello_world/Pic.c.obj"
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\hello_world.dir\src\hello_world\Pic.c.obj   -c D:\K210SDK\K210_i8080ToRGB\src\hello_world\Pic.c
 
 CMakeFiles/hello_world.dir/src/hello_world/Pic.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hello_world.dir/src/hello_world/Pic.c.i"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\K210\K210_i8080ToRGB\src\hello_world\Pic.c > CMakeFiles\hello_world.dir\src\hello_world\Pic.c.i
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\K210SDK\K210_i8080ToRGB\src\hello_world\Pic.c > CMakeFiles\hello_world.dir\src\hello_world\Pic.c.i
 
 CMakeFiles/hello_world.dir/src/hello_world/Pic.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hello_world.dir/src/hello_world/Pic.c.s"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\K210\K210_i8080ToRGB\src\hello_world\Pic.c -o CMakeFiles\hello_world.dir\src\hello_world\Pic.c.s
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\K210SDK\K210_i8080ToRGB\src\hello_world\Pic.c -o CMakeFiles\hello_world.dir\src\hello_world\Pic.c.s
 
 CMakeFiles/hello_world.dir/src/hello_world/main.c.obj: CMakeFiles/hello_world.dir/flags.make
 CMakeFiles/hello_world.dir/src/hello_world/main.c.obj: ../src/hello_world/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\K210\K210_i8080ToRGB\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/hello_world.dir/src/hello_world/main.c.obj"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\hello_world.dir\src\hello_world\main.c.obj   -c D:\K210\K210_i8080ToRGB\src\hello_world\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\K210SDK\K210_i8080ToRGB\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/hello_world.dir/src/hello_world/main.c.obj"
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\hello_world.dir\src\hello_world\main.c.obj   -c D:\K210SDK\K210_i8080ToRGB\src\hello_world\main.c
 
 CMakeFiles/hello_world.dir/src/hello_world/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hello_world.dir/src/hello_world/main.c.i"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\K210\K210_i8080ToRGB\src\hello_world\main.c > CMakeFiles\hello_world.dir\src\hello_world\main.c.i
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\K210SDK\K210_i8080ToRGB\src\hello_world\main.c > CMakeFiles\hello_world.dir\src\hello_world\main.c.i
 
 CMakeFiles/hello_world.dir/src/hello_world/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hello_world.dir/src/hello_world/main.c.s"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\K210\K210_i8080ToRGB\src\hello_world\main.c -o CMakeFiles\hello_world.dir\src\hello_world\main.c.s
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\K210SDK\K210_i8080ToRGB\src\hello_world\main.c -o CMakeFiles\hello_world.dir\src\hello_world\main.c.s
 
 CMakeFiles/hello_world.dir/src/hello_world/oofatfs/diskio.c.obj: CMakeFiles/hello_world.dir/flags.make
 CMakeFiles/hello_world.dir/src/hello_world/oofatfs/diskio.c.obj: ../src/hello_world/oofatfs/diskio.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\K210\K210_i8080ToRGB\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/hello_world.dir/src/hello_world/oofatfs/diskio.c.obj"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\hello_world.dir\src\hello_world\oofatfs\diskio.c.obj   -c D:\K210\K210_i8080ToRGB\src\hello_world\oofatfs\diskio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\K210SDK\K210_i8080ToRGB\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/hello_world.dir/src/hello_world/oofatfs/diskio.c.obj"
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\hello_world.dir\src\hello_world\oofatfs\diskio.c.obj   -c D:\K210SDK\K210_i8080ToRGB\src\hello_world\oofatfs\diskio.c
 
 CMakeFiles/hello_world.dir/src/hello_world/oofatfs/diskio.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hello_world.dir/src/hello_world/oofatfs/diskio.c.i"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\K210\K210_i8080ToRGB\src\hello_world\oofatfs\diskio.c > CMakeFiles\hello_world.dir\src\hello_world\oofatfs\diskio.c.i
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\K210SDK\K210_i8080ToRGB\src\hello_world\oofatfs\diskio.c > CMakeFiles\hello_world.dir\src\hello_world\oofatfs\diskio.c.i
 
 CMakeFiles/hello_world.dir/src/hello_world/oofatfs/diskio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hello_world.dir/src/hello_world/oofatfs/diskio.c.s"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\K210\K210_i8080ToRGB\src\hello_world\oofatfs\diskio.c -o CMakeFiles\hello_world.dir\src\hello_world\oofatfs\diskio.c.s
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\K210SDK\K210_i8080ToRGB\src\hello_world\oofatfs\diskio.c -o CMakeFiles\hello_world.dir\src\hello_world\oofatfs\diskio.c.s
 
 CMakeFiles/hello_world.dir/src/hello_world/oofatfs/ff.c.obj: CMakeFiles/hello_world.dir/flags.make
 CMakeFiles/hello_world.dir/src/hello_world/oofatfs/ff.c.obj: ../src/hello_world/oofatfs/ff.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\K210\K210_i8080ToRGB\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/hello_world.dir/src/hello_world/oofatfs/ff.c.obj"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\hello_world.dir\src\hello_world\oofatfs\ff.c.obj   -c D:\K210\K210_i8080ToRGB\src\hello_world\oofatfs\ff.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\K210SDK\K210_i8080ToRGB\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/hello_world.dir/src/hello_world/oofatfs/ff.c.obj"
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\hello_world.dir\src\hello_world\oofatfs\ff.c.obj   -c D:\K210SDK\K210_i8080ToRGB\src\hello_world\oofatfs\ff.c
 
 CMakeFiles/hello_world.dir/src/hello_world/oofatfs/ff.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hello_world.dir/src/hello_world/oofatfs/ff.c.i"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\K210\K210_i8080ToRGB\src\hello_world\oofatfs\ff.c > CMakeFiles\hello_world.dir\src\hello_world\oofatfs\ff.c.i
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\K210SDK\K210_i8080ToRGB\src\hello_world\oofatfs\ff.c > CMakeFiles\hello_world.dir\src\hello_world\oofatfs\ff.c.i
 
 CMakeFiles/hello_world.dir/src/hello_world/oofatfs/ff.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hello_world.dir/src/hello_world/oofatfs/ff.c.s"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\K210\K210_i8080ToRGB\src\hello_world\oofatfs\ff.c -o CMakeFiles\hello_world.dir\src\hello_world\oofatfs\ff.c.s
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\K210SDK\K210_i8080ToRGB\src\hello_world\oofatfs\ff.c -o CMakeFiles\hello_world.dir\src\hello_world\oofatfs\ff.c.s
 
 CMakeFiles/hello_world.dir/src/hello_world/oofatfs/option/ccsbcs.c.obj: CMakeFiles/hello_world.dir/flags.make
 CMakeFiles/hello_world.dir/src/hello_world/oofatfs/option/ccsbcs.c.obj: ../src/hello_world/oofatfs/option/ccsbcs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\K210\K210_i8080ToRGB\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/hello_world.dir/src/hello_world/oofatfs/option/ccsbcs.c.obj"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\hello_world.dir\src\hello_world\oofatfs\option\ccsbcs.c.obj   -c D:\K210\K210_i8080ToRGB\src\hello_world\oofatfs\option\ccsbcs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\K210SDK\K210_i8080ToRGB\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/hello_world.dir/src/hello_world/oofatfs/option/ccsbcs.c.obj"
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\hello_world.dir\src\hello_world\oofatfs\option\ccsbcs.c.obj   -c D:\K210SDK\K210_i8080ToRGB\src\hello_world\oofatfs\option\ccsbcs.c
 
 CMakeFiles/hello_world.dir/src/hello_world/oofatfs/option/ccsbcs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hello_world.dir/src/hello_world/oofatfs/option/ccsbcs.c.i"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\K210\K210_i8080ToRGB\src\hello_world\oofatfs\option\ccsbcs.c > CMakeFiles\hello_world.dir\src\hello_world\oofatfs\option\ccsbcs.c.i
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\K210SDK\K210_i8080ToRGB\src\hello_world\oofatfs\option\ccsbcs.c > CMakeFiles\hello_world.dir\src\hello_world\oofatfs\option\ccsbcs.c.i
 
 CMakeFiles/hello_world.dir/src/hello_world/oofatfs/option/ccsbcs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hello_world.dir/src/hello_world/oofatfs/option/ccsbcs.c.s"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\K210\K210_i8080ToRGB\src\hello_world\oofatfs\option\ccsbcs.c -o CMakeFiles\hello_world.dir\src\hello_world\oofatfs\option\ccsbcs.c.s
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\K210SDK\K210_i8080ToRGB\src\hello_world\oofatfs\option\ccsbcs.c -o CMakeFiles\hello_world.dir\src\hello_world\oofatfs\option\ccsbcs.c.s
 
 CMakeFiles/hello_world.dir/src/hello_world/sdcard.c.obj: CMakeFiles/hello_world.dir/flags.make
 CMakeFiles/hello_world.dir/src/hello_world/sdcard.c.obj: ../src/hello_world/sdcard.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\K210\K210_i8080ToRGB\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/hello_world.dir/src/hello_world/sdcard.c.obj"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\hello_world.dir\src\hello_world\sdcard.c.obj   -c D:\K210\K210_i8080ToRGB\src\hello_world\sdcard.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\K210SDK\K210_i8080ToRGB\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/hello_world.dir/src/hello_world/sdcard.c.obj"
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\hello_world.dir\src\hello_world\sdcard.c.obj   -c D:\K210SDK\K210_i8080ToRGB\src\hello_world\sdcard.c
 
 CMakeFiles/hello_world.dir/src/hello_world/sdcard.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hello_world.dir/src/hello_world/sdcard.c.i"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\K210\K210_i8080ToRGB\src\hello_world\sdcard.c > CMakeFiles\hello_world.dir\src\hello_world\sdcard.c.i
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\K210SDK\K210_i8080ToRGB\src\hello_world\sdcard.c > CMakeFiles\hello_world.dir\src\hello_world\sdcard.c.i
 
 CMakeFiles/hello_world.dir/src/hello_world/sdcard.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hello_world.dir/src/hello_world/sdcard.c.s"
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\K210\K210_i8080ToRGB\src\hello_world\sdcard.c -o CMakeFiles\hello_world.dir\src\hello_world\sdcard.c.s
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\K210SDK\K210_i8080ToRGB\src\hello_world\sdcard.c -o CMakeFiles\hello_world.dir\src\hello_world\sdcard.c.s
 
 # Object files for target hello_world
 hello_world_OBJECTS = \
@@ -170,10 +170,10 @@ hello_world: CMakeFiles/hello_world.dir/src/hello_world/sdcard.c.obj
 hello_world: CMakeFiles/hello_world.dir/build.make
 hello_world: lib/libkendryte.a
 hello_world: CMakeFiles/hello_world.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\K210\K210_i8080ToRGB\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable hello_world"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\K210SDK\K210_i8080ToRGB\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable hello_world"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\hello_world.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating .bin file ..."
-	D:\K210\kendryte-toolchain\bin\riscv64-unknown-elf-objcopy.exe --output-format=binary D:/K210/K210_i8080ToRGB/build/hello_world D:/K210/K210_i8080ToRGB/build/hello_world.bin
+	D:\K210SDK\kendryte-toolchain\bin\riscv64-unknown-elf-objcopy.exe --output-format=binary D:/K210SDK/K210_i8080ToRGB/build/hello_world D:/K210SDK/K210_i8080ToRGB/build/hello_world.bin
 
 # Rule to build all files generated by this target.
 CMakeFiles/hello_world.dir/build: hello_world
@@ -185,6 +185,6 @@ CMakeFiles/hello_world.dir/clean:
 .PHONY : CMakeFiles/hello_world.dir/clean
 
 CMakeFiles/hello_world.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\K210\K210_i8080ToRGB D:\K210\K210_i8080ToRGB D:\K210\K210_i8080ToRGB\build D:\K210\K210_i8080ToRGB\build D:\K210\K210_i8080ToRGB\build\CMakeFiles\hello_world.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\K210SDK\K210_i8080ToRGB D:\K210SDK\K210_i8080ToRGB D:\K210SDK\K210_i8080ToRGB\build D:\K210SDK\K210_i8080ToRGB\build D:\K210SDK\K210_i8080ToRGB\build\CMakeFiles\hello_world.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/hello_world.dir/depend
 

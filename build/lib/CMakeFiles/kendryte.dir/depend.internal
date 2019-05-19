@@ -3,10 +3,10 @@
 
 lib/CMakeFiles/kendryte.dir/bsp/crt.S.obj
  ../lib/bsp/include/encoding.h
- D:/K210/K210_i8080ToRGB/lib/bsp/crt.S
+ D:/K210SDK/K210_i8080ToRGB/lib/bsp/crt.S
 lib/CMakeFiles/kendryte.dir/bsp/entry.c.obj
  ../lib/bsp/include/entry.h
- D:/K210/K210_i8080ToRGB/lib/bsp/entry.c
+ D:/K210SDK/K210_i8080ToRGB/lib/bsp/entry.c
 lib/CMakeFiles/kendryte.dir/bsp/entry_user.c.obj
  ../lib/bsp/include/atomic.h
  ../lib/bsp/include/encoding.h
@@ -21,7 +21,7 @@ lib/CMakeFiles/kendryte.dir/bsp/entry_user.c.obj
  ../lib/drivers/include/sysctl.h
  ../lib/drivers/include/uarths.h
  ../lib/utils/include/syslog.h
- D:/K210/K210_i8080ToRGB/lib/bsp/entry_user.c
+ D:/K210SDK/K210_i8080ToRGB/lib/bsp/entry_user.c
 lib/CMakeFiles/kendryte.dir/bsp/interrupt.c.obj
  ../lib/bsp/include/dump.h
  ../lib/bsp/include/encoding.h
@@ -32,7 +32,7 @@ lib/CMakeFiles/kendryte.dir/bsp/interrupt.c.obj
  ../lib/drivers/include/plic.h
  ../lib/drivers/include/uarths.h
  ../lib/utils/include/syslog.h
- D:/K210/K210_i8080ToRGB/lib/bsp/interrupt.c
+ D:/K210SDK/K210_i8080ToRGB/lib/bsp/interrupt.c
 lib/CMakeFiles/kendryte.dir/bsp/printf.c.obj
  ../lib/bsp/include/atomic.h
  ../lib/bsp/include/encoding.h
@@ -40,7 +40,7 @@ lib/CMakeFiles/kendryte.dir/bsp/printf.c.obj
  ../lib/bsp/include/printf.h
  ../lib/drivers/include/plic.h
  ../lib/drivers/include/uarths.h
- D:/K210/K210_i8080ToRGB/lib/bsp/printf.c
+ D:/K210SDK/K210_i8080ToRGB/lib/bsp/printf.c
 lib/CMakeFiles/kendryte.dir/bsp/sleep.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/bsp/include/platform.h
@@ -48,7 +48,7 @@ lib/CMakeFiles/kendryte.dir/bsp/sleep.c.obj
  ../lib/bsp/include/syscalls.h
  ../lib/drivers/include/clint.h
  ../lib/drivers/include/sysctl.h
- D:/K210/K210_i8080ToRGB/lib/bsp/sleep.c
+ D:/K210SDK/K210_i8080ToRGB/lib/bsp/sleep.c
 lib/CMakeFiles/kendryte.dir/bsp/syscalls.c.obj
  ../lib/bsp/include/atomic.h
  ../lib/bsp/include/dump.h
@@ -64,7 +64,7 @@ lib/CMakeFiles/kendryte.dir/bsp/syscalls.c.obj
  ../lib/drivers/include/sysctl.h
  ../lib/drivers/include/uarths.h
  ../lib/utils/include/syslog.h
- D:/K210/K210_i8080ToRGB/lib/bsp/syscalls.c
+ D:/K210SDK/K210_i8080ToRGB/lib/bsp/syscalls.c
 lib/CMakeFiles/kendryte.dir/drivers/aes.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/bsp/include/platform.h
@@ -74,19 +74,19 @@ lib/CMakeFiles/kendryte.dir/drivers/aes.c.obj
  ../lib/drivers/include/plic.h
  ../lib/drivers/include/sysctl.h
  ../lib/drivers/include/utils.h
- D:/K210/K210_i8080ToRGB/lib/drivers/aes.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/aes.c
 lib/CMakeFiles/kendryte.dir/drivers/apu.c.obj
  ../lib/bsp/include/platform.h
  ../lib/bsp/include/syscalls.h
  ../lib/drivers/include/apu.h
  ../lib/drivers/include/sysctl.h
- D:/K210/K210_i8080ToRGB/lib/drivers/apu.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/apu.c
 lib/CMakeFiles/kendryte.dir/drivers/clint.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/bsp/include/platform.h
  ../lib/drivers/include/clint.h
  ../lib/drivers/include/sysctl.h
- D:/K210/K210_i8080ToRGB/lib/drivers/clint.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/clint.c
 lib/CMakeFiles/kendryte.dir/drivers/dmac.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/bsp/include/platform.h
@@ -96,14 +96,14 @@ lib/CMakeFiles/kendryte.dir/drivers/dmac.c.obj
  ../lib/drivers/include/plic.h
  ../lib/drivers/include/sysctl.h
  ../lib/drivers/include/utils.h
- D:/K210/K210_i8080ToRGB/lib/drivers/dmac.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/dmac.c
 lib/CMakeFiles/kendryte.dir/drivers/dvp.c.obj
  ../lib/bsp/include/platform.h
  ../lib/drivers/include/dvp.h
  ../lib/drivers/include/fpioa.h
  ../lib/drivers/include/sysctl.h
  ../lib/drivers/include/utils.h
- D:/K210/K210_i8080ToRGB/lib/drivers/dvp.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/dvp.c
 lib/CMakeFiles/kendryte.dir/drivers/fft.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/bsp/include/platform.h
@@ -113,12 +113,12 @@ lib/CMakeFiles/kendryte.dir/drivers/fft.c.obj
  ../lib/drivers/include/plic.h
  ../lib/drivers/include/sysctl.h
  ../lib/drivers/include/utils.h
- D:/K210/K210_i8080ToRGB/lib/drivers/fft.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/fft.c
 lib/CMakeFiles/kendryte.dir/drivers/fpioa.c.obj
  ../lib/bsp/include/platform.h
  ../lib/drivers/include/fpioa.h
  ../lib/drivers/include/sysctl.h
- D:/K210/K210_i8080ToRGB/lib/drivers/fpioa.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/fpioa.c
 lib/CMakeFiles/kendryte.dir/drivers/gpio.c.obj
  ../lib/bsp/include/platform.h
  ../lib/drivers/include/fpioa.h
@@ -126,7 +126,7 @@ lib/CMakeFiles/kendryte.dir/drivers/gpio.c.obj
  ../lib/drivers/include/gpio_common.h
  ../lib/drivers/include/sysctl.h
  ../lib/drivers/include/utils.h
- D:/K210/K210_i8080ToRGB/lib/drivers/gpio.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/gpio.c
 lib/CMakeFiles/kendryte.dir/drivers/gpiohs.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/bsp/include/platform.h
@@ -136,7 +136,7 @@ lib/CMakeFiles/kendryte.dir/drivers/gpiohs.c.obj
  ../lib/drivers/include/plic.h
  ../lib/drivers/include/sysctl.h
  ../lib/drivers/include/utils.h
- D:/K210/K210_i8080ToRGB/lib/drivers/gpiohs.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/gpiohs.c
 lib/CMakeFiles/kendryte.dir/drivers/i2c.c.obj
  ../lib/bsp/include/atomic.h
  ../lib/bsp/include/bsp.h
@@ -153,7 +153,7 @@ lib/CMakeFiles/kendryte.dir/drivers/i2c.c.obj
  ../lib/drivers/include/plic.h
  ../lib/drivers/include/sysctl.h
  ../lib/drivers/include/utils.h
- D:/K210/K210_i8080ToRGB/lib/drivers/i2c.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/i2c.c
 lib/CMakeFiles/kendryte.dir/drivers/i2s.c.obj
  ../lib/bsp/include/atomic.h
  ../lib/bsp/include/bsp.h
@@ -169,7 +169,7 @@ lib/CMakeFiles/kendryte.dir/drivers/i2s.c.obj
  ../lib/drivers/include/plic.h
  ../lib/drivers/include/sysctl.h
  ../lib/drivers/include/utils.h
- D:/K210/K210_i8080ToRGB/lib/drivers/i2s.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/i2s.c
 lib/CMakeFiles/kendryte.dir/drivers/kpu.c.obj
  ../lib/bsp/include/atomic.h
  ../lib/bsp/include/bsp.h
@@ -185,7 +185,7 @@ lib/CMakeFiles/kendryte.dir/drivers/kpu.c.obj
  ../lib/drivers/include/kpu.h
  ../lib/drivers/include/plic.h
  ../lib/drivers/include/sysctl.h
- D:/K210/K210_i8080ToRGB/lib/drivers/kpu.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/kpu.c
 lib/CMakeFiles/kendryte.dir/drivers/plic.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/bsp/include/platform.h
@@ -193,7 +193,7 @@ lib/CMakeFiles/kendryte.dir/drivers/plic.c.obj
  ../lib/bsp/include/syscalls.h
  ../lib/drivers/include/plic.h
  ../lib/utils/include/syslog.h
- D:/K210/K210_i8080ToRGB/lib/drivers/plic.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/plic.c
 lib/CMakeFiles/kendryte.dir/drivers/pwm.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/bsp/include/platform.h
@@ -203,19 +203,19 @@ lib/CMakeFiles/kendryte.dir/drivers/pwm.c.obj
  ../lib/drivers/include/sysctl.h
  ../lib/drivers/include/timer.h
  ../lib/drivers/include/utils.h
- D:/K210/K210_i8080ToRGB/lib/drivers/pwm.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/pwm.c
 lib/CMakeFiles/kendryte.dir/drivers/rtc.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/bsp/include/platform.h
  ../lib/drivers/include/rtc.h
  ../lib/drivers/include/sysctl.h
- D:/K210/K210_i8080ToRGB/lib/drivers/rtc.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/rtc.c
 lib/CMakeFiles/kendryte.dir/drivers/sha256.c.obj
  ../lib/bsp/include/platform.h
  ../lib/drivers/include/sha256.h
  ../lib/drivers/include/sysctl.h
  ../lib/drivers/include/utils.h
- D:/K210/K210_i8080ToRGB/lib/drivers/sha256.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/sha256.c
 lib/CMakeFiles/kendryte.dir/drivers/spi.c.obj
  ../lib/bsp/include/atomic.h
  ../lib/bsp/include/bsp.h
@@ -234,7 +234,7 @@ lib/CMakeFiles/kendryte.dir/drivers/spi.c.obj
  ../lib/drivers/include/spi.h
  ../lib/drivers/include/sysctl.h
  ../lib/drivers/include/utils.h
- D:/K210/K210_i8080ToRGB/lib/drivers/spi.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/spi.c
 lib/CMakeFiles/kendryte.dir/drivers/sysctl.c.obj
  ../lib/bsp/include/atomic.h
  ../lib/bsp/include/bsp.h
@@ -245,7 +245,7 @@ lib/CMakeFiles/kendryte.dir/drivers/sysctl.c.obj
  ../lib/bsp/include/syscalls.h
  ../lib/drivers/include/clint.h
  ../lib/drivers/include/sysctl.h
- D:/K210/K210_i8080ToRGB/lib/drivers/sysctl.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/sysctl.c
 lib/CMakeFiles/kendryte.dir/drivers/timer.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/bsp/include/platform.h
@@ -256,7 +256,7 @@ lib/CMakeFiles/kendryte.dir/drivers/timer.c.obj
  ../lib/drivers/include/timer.h
  ../lib/drivers/include/utils.h
  ../lib/utils/include/syslog.h
- D:/K210/K210_i8080ToRGB/lib/drivers/timer.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/timer.c
 lib/CMakeFiles/kendryte.dir/drivers/uart.c.obj
  ../lib/bsp/include/atomic.h
  ../lib/bsp/include/encoding.h
@@ -267,18 +267,18 @@ lib/CMakeFiles/kendryte.dir/drivers/uart.c.obj
  ../lib/drivers/include/sysctl.h
  ../lib/drivers/include/uart.h
  ../lib/drivers/include/utils.h
- D:/K210/K210_i8080ToRGB/lib/drivers/uart.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/uart.c
 lib/CMakeFiles/kendryte.dir/drivers/uarths.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/bsp/include/platform.h
  ../lib/drivers/include/plic.h
  ../lib/drivers/include/sysctl.h
  ../lib/drivers/include/uarths.h
- D:/K210/K210_i8080ToRGB/lib/drivers/uarths.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/uarths.c
 lib/CMakeFiles/kendryte.dir/drivers/utils.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/drivers/include/utils.h
- D:/K210/K210_i8080ToRGB/lib/drivers/utils.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/utils.c
 lib/CMakeFiles/kendryte.dir/drivers/wdt.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/bsp/include/platform.h
@@ -286,7 +286,7 @@ lib/CMakeFiles/kendryte.dir/drivers/wdt.c.obj
  ../lib/drivers/include/sysctl.h
  ../lib/drivers/include/utils.h
  ../lib/drivers/include/wdt.h
- D:/K210/K210_i8080ToRGB/lib/drivers/wdt.c
+ D:/K210SDK/K210_i8080ToRGB/lib/drivers/wdt.c
 lib/CMakeFiles/kendryte.dir/freertos/core_sync.c.obj
  ../lib/bsp/include/atomic.h
  ../lib/bsp/include/encoding.h
@@ -302,7 +302,7 @@ lib/CMakeFiles/kendryte.dir/freertos/core_sync.c.obj
  ../lib/freertos/include/projdefs.h
  ../lib/freertos/include/task.h
  ../lib/freertos/portable/portmacro.h
- D:/K210/K210_i8080ToRGB/lib/freertos/core_sync.c
+ D:/K210SDK/K210_i8080ToRGB/lib/freertos/core_sync.c
 lib/CMakeFiles/kendryte.dir/freertos/croutine.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/freertos/conf/FreeRTOSConfig.h
@@ -314,7 +314,7 @@ lib/CMakeFiles/kendryte.dir/freertos/croutine.c.obj
  ../lib/freertos/include/projdefs.h
  ../lib/freertos/include/task.h
  ../lib/freertos/portable/portmacro.h
- D:/K210/K210_i8080ToRGB/lib/freertos/croutine.c
+ D:/K210SDK/K210_i8080ToRGB/lib/freertos/croutine.c
 lib/CMakeFiles/kendryte.dir/freertos/event_groups.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/freertos/conf/FreeRTOSConfig.h
@@ -327,7 +327,7 @@ lib/CMakeFiles/kendryte.dir/freertos/event_groups.c.obj
  ../lib/freertos/include/task.h
  ../lib/freertos/include/timers.h
  ../lib/freertos/portable/portmacro.h
- D:/K210/K210_i8080ToRGB/lib/freertos/event_groups.c
+ D:/K210SDK/K210_i8080ToRGB/lib/freertos/event_groups.c
 lib/CMakeFiles/kendryte.dir/freertos/list.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/freertos/conf/FreeRTOSConfig.h
@@ -337,7 +337,7 @@ lib/CMakeFiles/kendryte.dir/freertos/list.c.obj
  ../lib/freertos/include/portable.h
  ../lib/freertos/include/projdefs.h
  ../lib/freertos/portable/portmacro.h
- D:/K210/K210_i8080ToRGB/lib/freertos/list.c
+ D:/K210SDK/K210_i8080ToRGB/lib/freertos/list.c
 lib/CMakeFiles/kendryte.dir/freertos/locks.c.obj
  ../lib/bsp/include/atomic.h
  ../lib/bsp/include/bsp.h
@@ -357,7 +357,7 @@ lib/CMakeFiles/kendryte.dir/freertos/locks.c.obj
  ../lib/freertos/include/semphr.h
  ../lib/freertos/include/task.h
  ../lib/freertos/portable/portmacro.h
- D:/K210/K210_i8080ToRGB/lib/freertos/locks.c
+ D:/K210SDK/K210_i8080ToRGB/lib/freertos/locks.c
 lib/CMakeFiles/kendryte.dir/freertos/os_entry.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/bsp/include/platform.h
@@ -372,7 +372,7 @@ lib/CMakeFiles/kendryte.dir/freertos/os_entry.c.obj
  ../lib/freertos/include/projdefs.h
  ../lib/freertos/include/task.h
  ../lib/freertos/portable/portmacro.h
- D:/K210/K210_i8080ToRGB/lib/freertos/os_entry.c
+ D:/K210SDK/K210_i8080ToRGB/lib/freertos/os_entry.c
 lib/CMakeFiles/kendryte.dir/freertos/portable/heap_4.c.obj
  ../lib/bsp/include/atomic.h
  ../lib/bsp/include/encoding.h
@@ -384,7 +384,7 @@ lib/CMakeFiles/kendryte.dir/freertos/portable/heap_4.c.obj
  ../lib/freertos/include/projdefs.h
  ../lib/freertos/include/task.h
  ../lib/freertos/portable/portmacro.h
- D:/K210/K210_i8080ToRGB/lib/freertos/portable/heap_4.c
+ D:/K210SDK/K210_i8080ToRGB/lib/freertos/portable/heap_4.c
 lib/CMakeFiles/kendryte.dir/freertos/portable/port.c.obj
  ../lib/bsp/include/atomic.h
  ../lib/bsp/include/encoding.h
@@ -401,13 +401,13 @@ lib/CMakeFiles/kendryte.dir/freertos/portable/port.c.obj
  ../lib/freertos/include/projdefs.h
  ../lib/freertos/include/task.h
  ../lib/utils/include/syslog.h
- D:/K210/K210_i8080ToRGB/lib/freertos/portable/port.c
- D:/K210/K210_i8080ToRGB/lib/freertos/portable/portmacro.h
+ D:/K210SDK/K210_i8080ToRGB/lib/freertos/portable/port.c
+ D:/K210SDK/K210_i8080ToRGB/lib/freertos/portable/portmacro.h
 lib/CMakeFiles/kendryte.dir/freertos/portable/portasm.S.obj
  ../lib/bsp/include/encoding.h
- D:/K210/K210_i8080ToRGB/lib/freertos/portable/portasm.S
+ D:/K210SDK/K210_i8080ToRGB/lib/freertos/portable/portasm.S
 lib/CMakeFiles/kendryte.dir/freertos/pthread.c.obj
- D:/K210/K210_i8080ToRGB/lib/freertos/pthread.c
+ D:/K210SDK/K210_i8080ToRGB/lib/freertos/pthread.c
 lib/CMakeFiles/kendryte.dir/freertos/queue.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/freertos/conf/FreeRTOSConfig.h
@@ -420,7 +420,7 @@ lib/CMakeFiles/kendryte.dir/freertos/queue.c.obj
  ../lib/freertos/include/queue.h
  ../lib/freertos/include/task.h
  ../lib/freertos/portable/portmacro.h
- D:/K210/K210_i8080ToRGB/lib/freertos/queue.c
+ D:/K210SDK/K210_i8080ToRGB/lib/freertos/queue.c
 lib/CMakeFiles/kendryte.dir/freertos/stream_buffer.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/freertos/conf/FreeRTOSConfig.h
@@ -432,7 +432,7 @@ lib/CMakeFiles/kendryte.dir/freertos/stream_buffer.c.obj
  ../lib/freertos/include/stream_buffer.h
  ../lib/freertos/include/task.h
  ../lib/freertos/portable/portmacro.h
- D:/K210/K210_i8080ToRGB/lib/freertos/stream_buffer.c
+ D:/K210SDK/K210_i8080ToRGB/lib/freertos/stream_buffer.c
 lib/CMakeFiles/kendryte.dir/freertos/tasks.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/freertos/conf/FreeRTOSConfig.h
@@ -445,7 +445,7 @@ lib/CMakeFiles/kendryte.dir/freertos/tasks.c.obj
  ../lib/freertos/include/task.h
  ../lib/freertos/include/timers.h
  ../lib/freertos/portable/portmacro.h
- D:/K210/K210_i8080ToRGB/lib/freertos/tasks.c
+ D:/K210SDK/K210_i8080ToRGB/lib/freertos/tasks.c
 lib/CMakeFiles/kendryte.dir/freertos/timers.c.obj
  ../lib/bsp/include/encoding.h
  ../lib/freertos/conf/FreeRTOSConfig.h
@@ -458,4 +458,4 @@ lib/CMakeFiles/kendryte.dir/freertos/timers.c.obj
  ../lib/freertos/include/task.h
  ../lib/freertos/include/timers.h
  ../lib/freertos/portable/portmacro.h
- D:/K210/K210_i8080ToRGB/lib/freertos/timers.c
+ D:/K210SDK/K210_i8080ToRGB/lib/freertos/timers.c

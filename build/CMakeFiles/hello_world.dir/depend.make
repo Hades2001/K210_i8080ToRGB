@@ -33,6 +33,7 @@ CMakeFiles/hello_world.dir/src/hello_world/main.c.obj: ../lib/drivers/include/sp
 CMakeFiles/hello_world.dir/src/hello_world/main.c.obj: ../lib/drivers/include/sysctl.h
 CMakeFiles/hello_world.dir/src/hello_world/main.c.obj: ../lib/drivers/include/timer.h
 CMakeFiles/hello_world.dir/src/hello_world/main.c.obj: ../lib/drivers/include/uarths.h
+CMakeFiles/hello_world.dir/src/hello_world/main.c.obj: ../lib/drivers/include/utils.h
 CMakeFiles/hello_world.dir/src/hello_world/main.c.obj: ../src/hello_world/oofatfs/diskio.h
 CMakeFiles/hello_world.dir/src/hello_world/main.c.obj: ../src/hello_world/oofatfs/ff.h
 CMakeFiles/hello_world.dir/src/hello_world/main.c.obj: ../src/hello_world/oofatfs/ffconf.h

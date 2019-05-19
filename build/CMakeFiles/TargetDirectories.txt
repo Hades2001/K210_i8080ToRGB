@@ -1,6 +1,6 @@
-D:/K210/K210_i8080ToRGB/build/CMakeFiles/edit_cache.dir
-D:/K210/K210_i8080ToRGB/build/CMakeFiles/hello_world.dir
-D:/K210/K210_i8080ToRGB/build/CMakeFiles/rebuild_cache.dir
-D:/K210/K210_i8080ToRGB/build/lib/CMakeFiles/rebuild_cache.dir
-D:/K210/K210_i8080ToRGB/build/lib/CMakeFiles/kendryte.dir
-D:/K210/K210_i8080ToRGB/build/lib/CMakeFiles/edit_cache.dir
+D:/K210SDK/K210_i8080ToRGB/build/CMakeFiles/edit_cache.dir
+D:/K210SDK/K210_i8080ToRGB/build/CMakeFiles/hello_world.dir
+D:/K210SDK/K210_i8080ToRGB/build/CMakeFiles/rebuild_cache.dir
+D:/K210SDK/K210_i8080ToRGB/build/lib/CMakeFiles/rebuild_cache.dir
+D:/K210SDK/K210_i8080ToRGB/build/lib/CMakeFiles/kendryte.dir
+D:/K210SDK/K210_i8080ToRGB/build/lib/CMakeFiles/edit_cache.dir

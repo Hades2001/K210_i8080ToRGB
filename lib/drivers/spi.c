@@ -118,6 +118,7 @@ static void spi_set_tmod(uint8_t spi_num, uint32_t tmod)
     configASSERT(spi_num < SPI_DEVICE_MAX);
     volatile spi_t *spi_handle = spi[spi_num];
     uint8_t tmod_offset = 0;
+    //printf("spi_num=%d\r\n",spi_num);
     switch(spi_num)
     {
         case 0:
@@ -130,6 +131,7 @@ static void spi_set_tmod(uint8_t spi_num, uint32_t tmod)
             tmod_offset = 10;
             break;
     }
+    //printf("tmod_offset=%d\r\n",tmod_offset);
     set_bit(&spi_handle->ctrlr0, 3 << tmod_offset, tmod << tmod_offset);
 }
 
@@ -261,13 +263,19 @@ void spi_send_data_normal(spi_device_num_t spi_num, spi_chip_select_t chip_selec
             dfs_offset = 0;
             break;
     }
+
+    //printf("dfs_offset = %d \r\n" , dfs_offset);
     uint32_t data_bit_length = (spi_handle->ctrlr0 >> dfs_offset) & 0x1F;
     spi_transfer_width_t frame_width = spi_get_frame_size(data_bit_length);
+
+    //printf("frame_width = %d \r\n" , frame_width);
 
     uint8_t v_misalign_flag = 0;
     uint32_t v_send_data;
     if((uintptr_t)tx_buff % frame_width)
         v_misalign_flag = 1;
+
+    printf("v_misalign_flag = %d \r\n" , v_misalign_flag);
 
     spi_handle->ssienr = 0x01;
     spi_handle->ser = 1U << chip_select;
@@ -403,7 +411,7 @@ void spi_send_data_standard_dma(dmac_channel_number_t channel_num, spi_device_nu
     free((void *)buf);
 }
 
-void spi_send_data_normal_dma(dmac_channel_number_t channel_num, spi_device_num_t spi_num,
+void  spi_send_data_normal_dma(dmac_channel_number_t channel_num, spi_device_num_t spi_num,
                               spi_chip_select_t chip_select,
                               const void *tx_buff, size_t tx_len, spi_transfer_width_t spi_transfer_width)
 {
@@ -936,6 +944,7 @@ void spi_send_data_multiple(spi_device_num_t spi_num, spi_chip_select_t chip_sel
     configASSERT(spi_num < SPI_DEVICE_MAX && spi_num != 2);
 
     size_t index, fifo_len;
+    printf( "spi_num=%d\r\n",spi_num);
     spi_set_tmod(spi_num, SPI_TMOD_TRANS);
     volatile spi_t *spi_handle = spi[spi_num];
     spi_handle->ssienr = 0x01;
