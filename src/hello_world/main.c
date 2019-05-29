@@ -32,7 +32,9 @@
 
 #include "dmac.h"
 
-
+#define     LCD_BL_ON       0x61
+#define     LCD_BL_OFF      0x60
+#define     LCD_DISOLAY_ON  0x38
 
 void InitLCDGPIO( void )
 {
@@ -61,9 +63,6 @@ void InitLCDHard( void )
     spi_init(SPI_CHANNEL, SPI_WORK_MODE_0, SPI_FF_OCTAL, 32, 0);
     spi_set_clk_rate(SPI_CHANNEL, 25000000);
 }
-
-#define     LCD_BL_ON       0x61
-#define     LCD_BL_OFF      0x60
 
 void LCDSendCMD( uint8_t CMDData )
 {
@@ -108,17 +107,6 @@ void spi_Mysend_Dmac( sysctl_dma_channel_t channel , spi_device_num_t spi_num ,
     volatile spi_t *spi_handle = spi[spi_num];
     uint8_t tmod_offset = 8;
 
-    //dmac_wait_done(channel);
-    /*
-    free( buf );
-
-    buf = malloc( Length );
-    
-    for (uint16_t i = 0; i < ( Length / 4 ); i++)
-    {
-        buf[i] = ((uint32_t *)Data)[i];
-    }
-    */
     set_bit(&spi_handle->ctrlr0, 3 << tmod_offset, SPI_TMOD_TRANS << tmod_offset);
 
     spi_handle->dmacr = 0x2;    /*enable dma transmit*/
@@ -128,9 +116,7 @@ void spi_Mysend_Dmac( sysctl_dma_channel_t channel , spi_device_num_t spi_num ,
 
     dmac_set_channel_param(channel, Data, (void *)(&spi_handle->dr[0]), DMAC_ADDR_INCREMENT, DMAC_ADDR_NOCHANGE,
                                 DMAC_MSIZE_4, DMAC_TRANS_WIDTH_32, Length / 4 );
-                                /*
-    dmac_enable();
-    */
+
     dmac_channel_enable(channel);
 
     spi_handle->ser = 1U << chip_select;
@@ -140,8 +126,6 @@ void LCDSendByte( uint8_t *DataBuf , uint32_t Length )
 {
     spi_Mysend_32Bitdata( SPI_CHANNEL , SPI_SLAVE_SELECT , DataBuf , Length );
     //spi_Mysend_Dmac( DMAC_CHANNEL1 , SPI_CHANNEL , SPI_SLAVE_SELECT , DataBuf , Length);
-    //spi_send_data_multiple_dma( DMAC_CHANNEL0 , SPI_CHANNEL , SPI_SLAVE_SELECT , NULL, 0 , DataBuf, Length );
-    //spi_send_data_multiple( SPI_CHANNEL, SPI_SLAVE_SELECT, NULL, 0 , DataBuf, Length);    
 }
 
 uint8_t     TestBuff[1600];
@@ -173,7 +157,6 @@ void irq_time( void )
 
 void LCDPrintChar( uint16_t XPos , uint16_t YPos , char CharData ,uint8_t Mode , uint16_t FontColor ,uint16_t BKColor)
 {
-
     for( uint8_t y = 0 ; y < 7 ; y++ )
     {
         uint8_t Data = FontLib[ ( CharData - 0x20 ) * 7 + y ];
@@ -269,23 +252,12 @@ bool BMPFile( FATFS *fs , const TCHAR* path )
     }
 
     LCDPrintStr( 4,104,(char * )path,LCDDisMode_TranBK,0xF800,0x0000);
-    /*
-    printf( "BMP_Type: %04X \r\n",BmpHeadr.bfType );
-    printf( "BMP_Size: %08X \r\n",BmpHeadr.bfSize );
-    printf( "BMP_Res : %02X \r\n" , BmpHeadr.bfReserved);
-    printf( "BMP_Offset: %08X \r\n",BmpHeadr.bfOffBits );
-    */
+
     if( f_read( &file , &InfHeard , sizeof( InfHeard ), &fbr ) != FR_OK )
     {
         printf( "Debug:%s:%d \r\n",__FILE__,__LINE__);
         return false;
     }
-    /*
-    printf( "BMP_Width    : %d \r\n", InfHeard.biWidth );
-    printf( "BMP_Height   : %d \r\n", InfHeard.biHeight );
-    printf( "BMP_BitCount : %d \r\n", InfHeard.biBitCount);
-    printf( "BMP_Com      : %d \r\n", InfHeard.biCompression );
-    */
 
     uint32_t YPos = 32; 
     uint32_t XPos = 0; 
@@ -305,7 +277,7 @@ bool BMPFile( FATFS *fs , const TCHAR* path )
             LCD_Buff[ ( (YPos+y) * 640 ) + ( (XPos+(x/3)) * 2 ) + 1 ]   = Color >> 8;
         }
     }
-//LCD_Buff
+    
     f_close( &file );
 
     return true;
@@ -361,8 +333,8 @@ int main()
     sprintf( StrBuff ,"./%d/BC%04d.bmp",1,369);
     BMPFile( &fs ,StrBuff);
 
-    LCDSendCMD(0x61);
-    LCDSendCMD(0x38);
+    LCDSendCMD(LCD_BL_ON);
+    LCDSendCMD(LCD_DISOLAY_ON);
 
     dmac_cfg_u_t  dmac_cfg;
 
